@@ -50,6 +50,10 @@ set(CMAKE_BUILD_TYPE Release CACHE STRING
 hunter_add_package(OpenCV)
 hunter_add_package(Boost)
 
+if(ANDROID) ### Temporary hack for OpenCV Android builds
+  list(APPEND CMAKE_MODULE_PATH "${HUNTER_TOOLCHAIN_ID_PATH}/Install/sdk/native/jni")
+endif()
+
 message("CVMATIO CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
 
 find_package(Boost REQUIRED)
