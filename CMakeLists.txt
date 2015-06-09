@@ -50,6 +50,8 @@ set(CMAKE_BUILD_TYPE Release CACHE STRING
 hunter_add_package(OpenCV)
 hunter_add_package(Boost)
 
+message("CVMATIO CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
+
 find_package(Boost REQUIRED)
 find_package(ZLIB CONFIG QUIET) # workaround
 find_package(TIFF CONFIG QUIET) # workaround
